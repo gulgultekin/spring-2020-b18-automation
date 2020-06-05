@@ -20,7 +20,7 @@ public class P3_LinkTextLocator {
         //3- Verify Title contains Gmail, expected: "Gmail"
         String actualGmailTitle = driver.getTitle();
         String expectedInTitle = "Gmail";
-        
+
         if (actualGmailTitle.contains(expectedInTitle)){
             System.out.println("Gmail title verification passed!");
         }else{
@@ -28,6 +28,18 @@ public class P3_LinkTextLocator {
         }
 
         //4- Go back to Google page by using back()
+        driver.navigate().back();
+
+        //5- Verify title equals to Google
+        String actualTitle = driver.getTitle();
+        String expectedtitle = "Google";
+
+        if (actualTitle.equals(expectedtitle)){
+            System.out.println("Google page title verification PASSED!");
+        }else{
+            System.out.println("Google page title verification FAILED!!!");
+        }
+
 
 
 
