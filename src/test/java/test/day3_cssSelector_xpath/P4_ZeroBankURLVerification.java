@@ -38,6 +38,6 @@ public class P4_ZeroBankURLVerification {
         }
 
         System.out.println("Is forgot password displayed? " +forgotPasswordLink.isDisplayed());
-        
+
     }
 }
