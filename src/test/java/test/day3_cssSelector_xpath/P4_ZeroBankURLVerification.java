@@ -18,8 +18,11 @@ public class P4_ZeroBankURLVerification {
         driver.get("http://zero.webappsecurity.com/login.html");
 
         //3. Get attribute value of href from the “forgot your password” link
-        //driver.findElement(By.linkText("Forgot your password ?"));
-        WebElement forgotPasswordLink = driver.findElement(By.partialLinkText("Forgot"));
+        WebElement forgotPasswordLink =driver.findElement(By.linkText("Forgot your password ?"));
+        //WebElement forgotPasswordLink = driver.findElement(By.partialLinkText("Forgot"));
+        //WebElement forgotPasswordLink = driver.findElement(By.partialLinkText("your"));
+        //WebElement forgotPasswordLink = driver.findElement(By.partialLinkText("password"));
+        //WebElement forgotPasswordLink = driver.findElement(By.partialLinkText("?"));
         //4. Verify attribute value contains
         //Expected: “/forgot-password.html”
 
@@ -35,5 +38,6 @@ public class P4_ZeroBankURLVerification {
         }
 
         System.out.println("Is forgot password displayed? " +forgotPasswordLink.isDisplayed());
+        
     }
 }
