@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class P05_SeleniumEasy_Checkbox {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException{
 
         //TC #2: SeleniumEasy Checkbox Verification – Section 1
         //1. Open Chrome browser
@@ -34,9 +34,15 @@ public class P05_SeleniumEasy_Checkbox {
         }
 
         //4. Click to checkbox under “Single Checkbox Demo” section
+        Thread.sleep(1000);
+        successCheckbox.click();
 
         //5. Verify “Success – Check box is checked” message is displayed.
-
+        if (successMessage.isDisplayed()){
+            System.out.println("Success message is displayed! PASS!");
+        }else{
+            System.out.println("Success message is not displayed! FAILED!!!");
+        }
 
     }
 }
