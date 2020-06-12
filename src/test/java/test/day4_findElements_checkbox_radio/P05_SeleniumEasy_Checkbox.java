@@ -23,7 +23,7 @@ public class P05_SeleniumEasy_Checkbox {
         driver.get("https://www.seleniumeasy.com/test/basic-checkbox-demo.html");
 
 
-        //3. Verify “Success – Check box is NOT checked” message is NOT displayed.
+        //3. Verify “Success – Check box is checked” message is NOT displayed.
         WebElement successCheckbox = driver.findElement(By.xpath("//input[@id='isAgeSelected']"));
         WebElement successMessage = driver.findElement(By.xpath("//div[@id='txtAge']"));
 
