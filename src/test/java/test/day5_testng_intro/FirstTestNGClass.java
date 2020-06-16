@@ -10,6 +10,7 @@ public class FirstTestNGClass {
         System.out.println("Test1 is running...");
     }
 
+
     public void test2(){
         System.out.println("Test2 is running...");
     }
