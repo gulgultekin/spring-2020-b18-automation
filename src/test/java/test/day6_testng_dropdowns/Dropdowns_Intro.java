@@ -62,4 +62,25 @@ public class Dropdowns_Intro {
 
     }
 
+    @Test
+    public void test2_state_dropdown_verification() throws InterruptedException{
+        //TC #2: Selecting state from State dropdown and verifying result
+        //1. Open Chrome browser
+        //2. Go to http://practice.cybertekschool.com/dropdown
+        //FIRST TWO STEPS ARE IMPLEMENTED IN BEFOREMETHOD
+
+        //locating state dropdown
+        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+
+        //3. Select Illinois
+        //Selecting using .selectByValue(); method --> Expected the attribute value of "value" attribute.
+        Thread.sleep(1000);
+        stateDropdown.selectByValue("IL");
+
+        //4. Select Virginia
+        //5. Select California
+        //6. Verify final selected option is California.
+        //Use all Select options. (visible text, value, index)
+    }
+
 }
