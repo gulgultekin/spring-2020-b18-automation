@@ -1,10 +1,18 @@
 package test.day6_testng_dropdowns;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestNGPractice {
+
+    @BeforeClass
+    public void before_class(){
+        System.out.println("BeforeCLASS is running! ----------------");
+    }
+
+    @AfterClass
+    public void after_class(){
+        System.out.println("AfterCLASS is running! -----------------");
+    }
 
     @BeforeMethod
     public void setUp(){
@@ -15,7 +23,7 @@ public class TestNGPractice {
     public void tearDown(){
         System.out.println("After method is running...");
     }
-    
+
     @Test
     public void test1(){
         System.out.println("Test1 is running...");
@@ -25,4 +33,8 @@ public class TestNGPractice {
     public void test2(){
         System.out.println("Test2 is running...");
     }
+
+
+
+
 }
