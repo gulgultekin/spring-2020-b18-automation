@@ -1,5 +1,6 @@
 package test.day6_testng_dropdowns;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class TestNGPractice {
@@ -27,6 +28,18 @@ public class TestNGPractice {
     @Test
     public void test1(){
         System.out.println("Test1 is running...");
+
+        String actualTitle = "Homepage"; //driver.getTitle();
+        String expectedTitle = "Homepage";
+
+        Assert.assertEquals(actualTitle, expectedTitle);
+        
+//        if(actualTitle.equals(expectedTitle)){
+//            System.out.println("Title verification passed!");
+//        }else{
+//            System.out.println("Title verification failed!!!");
+//        }
+
     }
 
     @Test
