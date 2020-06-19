@@ -78,12 +78,17 @@ public class Dropdowns_Intro {
         stateDropdown.selectByValue("IL");
 
         //4. Select Virginia
-        //Selecting using selectByVisibleText(); method --> Expects us to pass the actual displayed text
+        //Selecting using selectByVisibleText(); method --> Expects us to pass the actual displayed text.
         Thread.sleep(1000);
         stateDropdown.selectByVisibleText("Virginia");
 
-
         //5. Select California
+        //Selecting using selectByIndex(); method --> Expects us to pass the index number of the option.
+
+        Thread.sleep(1000);
+        stateDropdown.selectByIndex(5);
+
+
         //6. Verify final selected option is California.
         //Use all Select options. (visible text, value, index)
     }
