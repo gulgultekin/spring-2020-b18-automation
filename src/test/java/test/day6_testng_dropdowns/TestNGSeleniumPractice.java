@@ -29,7 +29,7 @@ public class TestNGSeleniumPractice {
         driver.close();
     }
 
-    @Test
+    @Test (priority = 2)
     public void google_title_test(){
         //1- Go to: https://www.google.com
 
@@ -47,8 +47,8 @@ public class TestNGSeleniumPractice {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
-    @Test
-    public void google_search_title_verification() throws InterruptedException{
+    @Test (priority = 1)
+    public void google_search_title_verification(){
         //1- open browser
         //2- go to https://google.com
         //3- search "apple"
