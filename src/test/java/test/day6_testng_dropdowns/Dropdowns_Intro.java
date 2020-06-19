@@ -33,7 +33,9 @@ public class Dropdowns_Intro {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
-
+    /*
+    This method is testing default value verification for ....
+     */
 
 
     @Test
@@ -51,7 +53,13 @@ public class Dropdowns_Intro {
         //4. Verify “State selection” default selected value is correct
         //Expected: “Select a State”
 
-        //BREAK UNTIL 4:03PM EST
+        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+
+        String actualDefaultOfStateDropdown = stateDropdown.getFirstSelectedOption().getText();
+        String expectDefaultOfStateDropdown = "Select a State";
+
+        Assert.assertEquals(actualDefaultOfStateDropdown, expectDefaultOfStateDropdown);
+
     }
 
 }
