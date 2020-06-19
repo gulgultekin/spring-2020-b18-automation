@@ -88,8 +88,15 @@ public class Dropdowns_Intro {
         Thread.sleep(1000);
         stateDropdown.selectByIndex(5);
 
-
         //6. Verify final selected option is California.
+
+        String expectedOption = "California";
+        String actualSelectedOption = stateDropdown.getFirstSelectedOption().getText();
+
+        //Assert.assertEquals(actualSelectedOption, expectedOption);
+
+        Assert.assertTrue(actualSelectedOption.equals(expectedOption));
+
         //Use all Select options. (visible text, value, index)
     }
 
