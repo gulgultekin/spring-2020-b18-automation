@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
@@ -19,6 +20,13 @@ public class TestNGSeleniumPractice {
         //What annotation I should be using for this? BeforeMethod or BeforeClass?
         driver = WebDriverFactory.getDriver("chrome");
         driver.get("https://www.google.com");
+    }
+
+    @AfterMethod
+    public void tearDown() throws InterruptedException{
+        //5- close browser
+        Thread.sleep(2000);
+        driver.close();
     }
 
     @Test
@@ -40,11 +48,9 @@ public class TestNGSeleniumPractice {
     }
 
     @Test
-    public void google_search_title_verification(){
+    public void google_search_title_verification() throws InterruptedException{
         //1- open browser
         //2- go to https://google.com
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
-        driver.get("https://www.google.com");
         //3- search "apple"
         //locating the google search box
         WebElement appleSearchBox = driver.findElement(By.name("q"));
@@ -53,9 +59,12 @@ public class TestNGSeleniumPractice {
         appleSearchBox.sendKeys("apple" + Keys.ENTER);
 
         //4- verify title contains "apple"
-        
+        String expectedInTitle = "apple";
+        String actualTitle = driver.getTitle();
 
-        //5- close browser
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
+
+
     }
 
 }
