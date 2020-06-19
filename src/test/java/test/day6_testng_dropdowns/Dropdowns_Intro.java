@@ -1,6 +1,7 @@
 package test.day6_testng_dropdowns;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
@@ -10,6 +11,12 @@ import java.util.concurrent.TimeUnit;
 public class Dropdowns_Intro {
 
     WebDriver driver;
+
+    @AfterMethod
+    public void tearDown() throws InterruptedException{
+        Thread.sleep(2000);
+        driver.close();
+    }
 
     @BeforeMethod
     public void setUp(){
@@ -24,6 +31,8 @@ public class Dropdowns_Intro {
 
     }
 
+
+
     @Test
     public void test1_default_value_verification(){
 
@@ -31,6 +40,8 @@ public class Dropdowns_Intro {
         //Expected: “Please select an option”
         //4. Verify “State selection” default selected value is correct
         //Expected: “Select a State”
+
+        //BREAK UNTIL 4:03PM EST
     }
 
 }
