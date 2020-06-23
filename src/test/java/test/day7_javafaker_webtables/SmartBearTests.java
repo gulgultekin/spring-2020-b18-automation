@@ -134,9 +134,12 @@ public class SmartBearTests {
         WebElement processButton = driver.findElement(By.xpath("//a[.='Process']"));
         processButton.click();
 
-
-
         //13.Verify success message “New order has been successfully added.”
+        //strong
+        WebElement successMessage = driver.findElement(By.xpath("//div[@class='buttons_process']/strong"));
+
+        Assert.assertTrue(successMessage.isDisplayed());
+
 
     }
 
