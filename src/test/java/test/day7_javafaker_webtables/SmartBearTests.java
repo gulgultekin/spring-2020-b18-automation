@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utilities.SmartBearUtilities;
 import utilities.WebDriverFactory;
 
 import java.util.List;
@@ -30,17 +31,8 @@ public class SmartBearTests {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //3. Enter username: “Tester”
-        WebElement inputUsername = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_username']"));
-        inputUsername.sendKeys("Tester");
+        SmartBearUtilities.login(driver);
 
-        //4. Enter password: “test”
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_password']"));
-        inputPassword.sendKeys("test");
-
-        //5. Click to Login button
-        WebElement loginButton = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_login_button']"));
-        loginButton.click();
     }
 
     @Test
