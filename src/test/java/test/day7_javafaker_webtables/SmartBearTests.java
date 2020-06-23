@@ -1,6 +1,7 @@
 package test.day7_javafaker_webtables;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -64,7 +65,7 @@ public class SmartBearTests {
     }
 
     @Test
-    public void p2_smartbear_order_placing(){
+    public void p2_smartbear_order_placing() throws InterruptedException{
         //TC#2: Smartbear software order placing
         //6. Click on Order
         WebElement orderLink = driver.findElement(By.xpath("//a[.='Order']"));
@@ -75,8 +76,15 @@ public class SmartBearTests {
         productDropdown.selectByVisibleText("FamilyAlbum");
 
         WebElement quantityInput = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
-        quantityInput.sendKeys("2");
-        
+
+        //quantityInput.clear(); //just deletes if there is any existing input in the input box.
+        Thread.sleep(1000);
+        //Imitating as if the user is pressing the BACKSPACE key on keyboard to delete something.
+        quantityInput.sendKeys(Keys.BACK_SPACE);
+
+        Thread.sleep(1000);
+        quantityInput.sendKeys();
+
         //8. Click to “Calculate” button
         //9. Fill address Info with JavaFaker
         //• Generate: name, street, city, state, zip code
