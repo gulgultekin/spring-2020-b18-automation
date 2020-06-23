@@ -137,7 +137,17 @@ public class SmartBearTests {
 
     @Test
     public void p3_smartbear_order_verification(){
-        
+        //2. Click on View all orders
+        //3. Verify Susan McLaren has order on date “01/05/2010”
+        WebElement susansDate = driver.findElement(By.xpath("//td[.='Susan McLaren']/following-sibling::td[3]"));
+
+        String expectedDate = "01/05/2010";
+        String actualDate = susansDate.getText();
+
+        Assert.assertEquals(actualDate, expectedDate);
+
+
+
     }
 
 }
