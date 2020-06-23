@@ -117,11 +117,27 @@ public class SmartBearTests {
         inputZip.sendKeys(zipcode);
 
         //10. Click on “visa” radio button
-        WebElement visaCheckbox = driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_0"));
+        WebElement visaRadioButton = driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_0"));
+        visaRadioButton.click();
 
         //11. Generate card number using JavaFaker
+        WebElement inputCardNumber = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
+
+        //Entering credit card number using faker
+        inputCardNumber.sendKeys(faker.finance().creditCard().replaceAll("-",""));
+
+        //Entering date
+        WebElement expirationDate = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
+        expirationDate.sendKeys("12/25");
+
         //12. Click on “Process”
+        WebElement processButton = driver.findElement(By.xpath("//a[.='Process']"));
+        processButton.click();
+
+
+
         //13.Verify success message “New order has been successfully added.”
+
     }
 
 
