@@ -78,15 +78,23 @@ public class SmartBearTests {
         WebElement quantityInput = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
 
         //quantityInput.clear(); //just deletes if there is any existing input in the input box.
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         //Imitating as if the user is pressing the BACKSPACE key on keyboard to delete something.
         quantityInput.sendKeys(Keys.BACK_SPACE);
 
-        Thread.sleep(1000);
-        quantityInput.sendKeys();
+        //Thread.sleep(1000);
+        quantityInput.sendKeys("2");
 
         //8. Click to “Calculate” button
+        WebElement calculateButton = driver.findElement(By.xpath("//input[@value='Calculate']"));
+        calculateButton.click();
+
         //9. Fill address Info with JavaFaker
+        WebElement inputCustomerName = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
+        WebElement inputStreet = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2"));
+        WebElement inputCity = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox3"));
+
+
         //• Generate: name, street, city, state, zip code
         //10. Click on “visa” radio button
         //11. Generate card number using JavaFaker
