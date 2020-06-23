@@ -26,10 +26,7 @@ public class SmartBearTests {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
 
-    @Test
-    public void p1_smartbear_login_test(){
         //3. Enter username: “Tester”
         WebElement inputUsername = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_username']"));
         inputUsername.sendKeys("Tester");
@@ -41,6 +38,11 @@ public class SmartBearTests {
         //5. Click to Login button
         WebElement loginButton = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_login_button']"));
         loginButton.click();
+    }
+
+    @Test
+    public void p1_smartbear_login_test(){
+
 
         //6. Print out count of all the links on landing page
         List<WebElement> allLinks = driver.findElements(By.xpath("//body//a"));
@@ -58,6 +60,23 @@ public class SmartBearTests {
             System.out.println(link.getText());
         }
 
+    }
+
+    @Test
+    public void p2_smartbear_order_placing(){
+        //TC#2: Smartbear software order placing
+        //3. Enter username: “Tester”
+        //4. Enter password: “test”
+        //5. Click on Login button
+        //6. Click on Order
+        //7. Select familyAlbum from product, set quantity to 2
+        //8. Click to “Calculate” button
+        //9. Fill address Info with JavaFaker
+        //• Generate: name, street, city, state, zip code
+        //10. Click on “visa” radio button
+        //11. Generate card number using JavaFaker
+        //12. Click on “Process”
+        //13.Verify success message “New order has been successfully added.”
     }
 
 
