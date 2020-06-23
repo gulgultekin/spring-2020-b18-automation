@@ -1,5 +1,6 @@
 package test.day7_javafaker_webtables;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -96,8 +97,28 @@ public class SmartBearTests {
         WebElement inputState = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4"));
         WebElement inputZip = driver.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
 
+        Faker faker = new Faker();
+
         //• Generate: name, street, city, state, zip code
+        // Entering name using javafaker.
+        inputCustomerName.sendKeys(faker.name().fullName());
+
+        //Entering street using javafaker
+        inputStreet.sendKeys(faker.address().streetName());
+
+        //Entering city using javafaker
+        inputCity.sendKeys(faker.address().city());
+
+        //Entering state using javafaker
+        inputState.sendKeys(faker.address().state());
+
+        //Entering zipcode using javafaker
+        String zipcode = faker.address().zipCode().replaceAll("-","");
+        inputZip.sendKeys(zipcode);
+
         //10. Click on “visa” radio button
+        WebElement visaCheckbox = driver.findElement(By.id("ctl00_MainContent_fmwOrder_cardList_0"));
+
         //11. Generate card number using JavaFaker
         //12. Click on “Process”
         //13.Verify success message “New order has been successfully added.”
