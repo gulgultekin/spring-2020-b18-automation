@@ -3,10 +3,12 @@ package test.day7_javafaker_webtables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class SmartBearTests {
@@ -37,8 +39,25 @@ public class SmartBearTests {
         inputPassword.sendKeys("test");
 
         //5. Click to Login button
+        WebElement loginButton = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_login_button']"));
+        loginButton.click();
+
         //6. Print out count of all the links on landing page
+        List<WebElement> allLinks = driver.findElements(By.xpath("//body//a"));
+
+        //System.out.println("Number of the links: " + allLinks.size());
+
+        int expectedNumberOfLinks = 6;
+        int actualNumberOfLinks = allLinks.size();
+
+        Assert.assertEquals(actualNumberOfLinks, 6);
+
         //7. Print out each link text on this page
+
+        for (WebElement link : allLinks){
+            System.out.println(link.getText());
+        }
+
     }
 
 
