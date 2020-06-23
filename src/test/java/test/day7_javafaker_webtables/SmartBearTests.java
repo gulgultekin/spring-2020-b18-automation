@@ -3,6 +3,7 @@ package test.day7_javafaker_webtables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -65,11 +66,17 @@ public class SmartBearTests {
     @Test
     public void p2_smartbear_order_placing(){
         //TC#2: Smartbear software order placing
-        //3. Enter username: “Tester”
-        //4. Enter password: “test”
-        //5. Click on Login button
         //6. Click on Order
+        WebElement orderLink = driver.findElement(By.xpath("//a[.='Order']"));
+        orderLink.click();
+
         //7. Select familyAlbum from product, set quantity to 2
+        Select productDropdown = new Select(driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
+        productDropdown.selectByVisibleText("FamilyAlbum");
+
+        WebElement quantityInput = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantityInput.sendKeys("2");
+        
         //8. Click to “Calculate” button
         //9. Fill address Info with JavaFaker
         //• Generate: name, street, city, state, zip code
