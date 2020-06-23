@@ -1,7 +1,10 @@
 package test.day7_javafaker_webtables;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -23,11 +26,21 @@ public class SmartBearTests {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    @Test
+    public void p1_smartbear_login_test(){
+        //3. Enter username: “Tester”
+        WebElement inputUsername = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_username']"));
+        inputUsername.sendKeys("Tester");
 
-    //3. Enter username: “Tester”
-    //4. Enter password: “test”
-    //5. Click to Login button
-    //6. Print out count of all the links on landing page
-    //7. Print out each link text on this page
+        //4. Enter password: “test”
+        WebElement inputPassword = driver.findElement(By.xpath("//input[@id='ctl00_MainContent_password']"));
+        inputPassword.sendKeys("test");
+
+        //5. Click to Login button
+        //6. Print out count of all the links on landing page
+        //7. Print out each link text on this page
+    }
+
+
 
 }
