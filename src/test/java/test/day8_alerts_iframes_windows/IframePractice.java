@@ -32,7 +32,13 @@ public class IframePractice {
         //WebElement iframe2 = driver.findElement(By.tagName("iframe"));
 
         //switching to iframe using webElement
-        driver.switchTo().frame(iframe);
+        //driver.switchTo().frame(iframe);
+
+        //switching to iframe using indexes
+        //driver.switchTo().frame(0);
+
+        //switching to iframe using id or name attribute value
+        driver.switchTo().frame("mce_0_ifr");
 
         //4. Assert: “Your content goes here.” Text is displayed.
         WebElement yourContentGoesHereText = driver.findElement(By.xpath("//p"));
