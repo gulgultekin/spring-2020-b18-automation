@@ -46,9 +46,16 @@ public class AlertsPractices {
         //Asserting the result text is displayed
         Assert.assertTrue(resultText.isDisplayed());
 
+    }
 
+    @Test
+    public void p2_confirmation_alert_test(){
 
+        WebElement confirmationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
 
+        confirmationAlertButton.click();
+
+        
     }
 
 
