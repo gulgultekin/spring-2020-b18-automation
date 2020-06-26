@@ -46,7 +46,11 @@ public class WindowsTabsPractice {
         for (String each : windowHandles){
             driver.switchTo().window(each);
             System.out.println(driver.getTitle());
+
         }
+
+        driver.switchTo().window(currentWindowHandle);
+        System.out.println(driver.getTitle());
 
 
     }
