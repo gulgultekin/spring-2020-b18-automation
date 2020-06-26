@@ -3,6 +3,7 @@ package utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -37,10 +38,14 @@ public class SmartBearUtilities {
         List<WebElement> namesList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr/td[2]"));
 
 
-        for (WebElement names : namesList) {
-
+        for (WebElement each : namesList) {
+            if (each.getText().equals(name)){
+                Assert.assertTrue(true);
+                return;
+            }
         }
 
+        Assert.fail("The name does not exist in the list! Verification failed!");
 
     }
 

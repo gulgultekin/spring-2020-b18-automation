@@ -3,6 +3,7 @@ package test.day8_alerts_iframes_windows;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utilities.SmartBearUtilities;
 import utilities.WebDriverFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -27,7 +28,11 @@ public class WebtablePractices {
 
     @Test
     public void p4_verifyOrder_test(){
+        //Logging into smartbear
+        SmartBearUtilities.login(driver);
 
+        //Call my method the verify if given name is in the list or not.
+        SmartBearUtilities.verifyOrder(driver, "Ricky Martin");
 
 
 
