@@ -29,11 +29,12 @@ public class IframePractice {
         //1-Locating iframe as web element, then switching to it.
         WebElement iframe = driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']"));
 
+        //switching to iframe using webElement
+        driver.switchTo().frame(iframe);
 
         //4. Assert: “Your content goes here.” Text is displayed.
         WebElement yourContentGoesHereText = driver.findElement(By.xpath("//p"));
-
-
+        
         //5. Assert: “An iFrame containing the TinyMCE WYSIWYG Editor
 
 
