@@ -2,6 +2,7 @@ package test.day8_alerts_iframes_windows;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -9,6 +10,8 @@ import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class DropdownPractices {
@@ -46,6 +49,15 @@ public class DropdownPractices {
 
         //2- Second way of doing same assertion
         Assert.assertTrue(actualDropdown.equalsIgnoreCase(expectedDropdown));
+
+        //PRACTICE #8:
+        // Storing all of the options in the month dropdown into the list of web elements
+        List<WebElement> actualDropdownOptions = monthDropdown.getOptions();
+
+        List<String> expectedMonths = Arrays.asList("January", "February", "March", "April", "May", "June", "July"
+        , "August", "September", "October", "November", "December");
+
+
     }
 
 }
