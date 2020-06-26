@@ -44,7 +44,7 @@ public class WebtablePractices {
     @Test
     public void p5_print_names_cities_test(){
         SmartBearUtilities.login(driver);
-
+        SmartBearUtilities.printNamesAndCities(driver);
 
     }
 
