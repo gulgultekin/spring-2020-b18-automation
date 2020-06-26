@@ -55,7 +55,11 @@ public class AlertsPractices {
 
         confirmationAlertButton.click();
 
-        
+        Alert alert = driver.switchTo().alert();
+
+        alert.dismiss();
+
+
     }
 
 
