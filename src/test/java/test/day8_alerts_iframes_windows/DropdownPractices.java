@@ -67,7 +67,6 @@ public class DropdownPractices {
 
         }
 
-
         Assert.assertEquals(actualMonthsText, expectedDropdownOptions);
 
 
