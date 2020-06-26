@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -54,8 +55,20 @@ public class DropdownPractices {
         // Storing all of the options in the month dropdown into the list of web elements
         List<WebElement> actualDropdownOptions = monthDropdown.getOptions();
 
-        List<String> expectedMonths = Arrays.asList("January", "February", "March", "April", "May", "June", "July"
+        List<String> expectedDropdownOptions = Arrays.asList("January", "February", "March", "April", "May", "June", "July"
         , "August", "September", "October", "November", "December");
+
+        //We create a list of Strings just as to use as a container to the texts of actual dropdown values
+        List<String> actualMonthsText = new ArrayList<>();
+
+        for (WebElement each : actualDropdownOptions) {
+
+            actualMonthsText.add(each.getText());
+
+        }
+
+
+        Assert.assertEquals(actualMonthsText, expectedDropdownOptions);
 
 
     }
