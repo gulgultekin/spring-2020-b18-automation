@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
@@ -38,7 +39,13 @@ public class AlertsPractices {
         //2- Use "alert" to accept the alert.
         alert.accept();
 
-        
+        //locating result web element
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+        //WebElement resultText2 = driver.findElement(By.id("result"));
+
+        //Asserting the result text is displayed
+        Assert.assertTrue(resultText.isDisplayed());
+
 
 
 
