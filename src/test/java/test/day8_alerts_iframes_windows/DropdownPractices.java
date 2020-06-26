@@ -44,7 +44,8 @@ public class DropdownPractices {
         //1- First way of doing this assertion
         Assert.assertEquals(actualDropdown.toLowerCase(), expectedDropdown.toLowerCase());
 
-        
+        //2- Second way of doing same assertion
+        Assert.assertTrue(actualDropdown.equalsIgnoreCase(expectedDropdown));
     }
 
 }
