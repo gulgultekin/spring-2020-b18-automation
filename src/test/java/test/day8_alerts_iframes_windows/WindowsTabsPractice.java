@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class WindowsTabsPractice {
@@ -31,9 +32,21 @@ public class WindowsTabsPractice {
 
         WebElement clickHereLink = driver.findElement(By.xpath("//a[.='Click Here']"));
 
+        System.out.println("BEFORE CLICKING: " + driver.getTitle());
+
         clickHereLink.click();
 
-        
+        System.out.println("AFTER CLICKING: " + driver.getTitle());
+
+        //driver.getWindowHandles() --> returns us A SET of Strings
+
+        Set<String> windowHandles = driver.getWindowHandles();
+
+
+        for (String each : windowHandles){
+            driver.switchTo().window(each);
+            System.out.println(driver.getTitle());
+        }
 
 
     }
