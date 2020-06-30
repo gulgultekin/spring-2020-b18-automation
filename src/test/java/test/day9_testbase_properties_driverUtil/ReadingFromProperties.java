@@ -2,12 +2,14 @@ package test.day9_testbase_properties_driverUtil;
 
 import org.testng.annotations.Test;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class ReadingFromProperties {
 
     @Test
-    public void reading_properties_file(){
+    public void reading_properties_file() throws IOException {
         //Properties class object allows us
         // to read from configuration.properties
         Properties properties = new Properties();
@@ -15,7 +17,19 @@ public class ReadingFromProperties {
         //We need to show where the file is stored.
         //We need the path of the file
         String path = "configuration.properties";
-        ///Users/cybertekchicago-1/Desktop/seleniumprojectb18/configuration.properties
+        //Users/cybertekchicago-1/Desktop/seleniumprojectb18/configuration.properties
+
+        //We need to open this configuration.properties file in java memory
+        FileInputStream file = new FileInputStream(path);
+
+        //We need to load the opened file into the properties object
+        properties.load(file);
+
+
+        //we can read the configuration.properties file using properties object
+        System.out.println("properties.getProperty(\"browser\") = " + properties.getProperty("browser"));
+
+        System.out.println("properties.getProperty(\"username\") = " + properties.getProperty("username"));
 
     }
 
