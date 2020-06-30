@@ -8,7 +8,7 @@ import test.base.TestBase;
 import java.util.Set;
 
 public class WindowHandlePractice extends TestBase {
-    
+
     @Test
     public void multiple_window_test(){
 
