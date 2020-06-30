@@ -30,6 +30,11 @@ public class WindowHandlePractice {
 
         driver.get("https://www.amazon.com");
 
+        String mainHandle = driver.getWindowHandle();
+
+        System.out.println("mainHandle = " + mainHandle);
+
+
         // we are downcasting our driver to JavascriptExecutor to be able to use its methods.
         ((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
