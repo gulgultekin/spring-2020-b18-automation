@@ -30,7 +30,7 @@ public class ConfigurationReader {
 
     //Our own custom method to read and get values from configuration.properties file
     public static String getProperty(String keyWord){
-
+        return properties.getProperty(keyWord);
     }
 
 
