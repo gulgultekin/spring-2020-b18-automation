@@ -2,6 +2,7 @@ package test.day9_testbase_properties_driverUtil;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
@@ -40,9 +41,16 @@ public class WindowHandlePractice {
         for (String each : windowHandles) {
 
             driver.switchTo().window(each);
+            System.out.println("current title:" + driver.getTitle());
+
+            if (driver.getCurrentUrl().contains("etsy")){
+                // 6. Assert: Title contains “Etsy”
+                Assert.assertTrue(driver.getTitle().contains("Etsy"));
+                break;
+            }
 
         }
-        // 6. Assert: Title contains “Etsy”
+
 
 
 
