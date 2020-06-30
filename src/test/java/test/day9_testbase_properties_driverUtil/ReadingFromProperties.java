@@ -1,6 +1,7 @@
 package test.day9_testbase_properties_driverUtil;
 
 import org.testng.annotations.Test;
+import utilities.ConfigurationReader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -32,6 +33,16 @@ public class ReadingFromProperties {
         System.out.println("properties.getProperty(\"username\") = " + properties.getProperty("username"));
 
         System.out.println("properties.getProperty(\"password\") = " + properties.getProperty("password"));
+    }
+
+
+    @Test
+    public void using_configuration_reader_utility(){
+        String browser = ConfigurationReader.getProperty("browser");
+        System.out.println("browser = " + browser);
+
+        String username = ConfigurationReader.getProperty("username");
+        System.out.println("username = " + username);
     }
 
 }
