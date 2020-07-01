@@ -1,6 +1,9 @@
 package test.office_hours;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
@@ -40,12 +43,24 @@ public class ConfigReaderPractice {
     }
 
     @Test
-    public void loginTest() {
+    public void loginTest() throws Exception{
         String browser = getProperty("browser");
         String URL = getProperty("url");
+        String username = getProperty("username");
+        String password = getProperty("password");
+
         driver = WebDriverFactory.getDriver(browser);
         driver.get(URL);
-        System.out.println(driver.getTitle());
+        System.out.println("Page title :: " + driver.getTitle());
+        //login
+        driver.findElement(By.id("prependedInput")).sendKeys(username);
+        driver.findElement(By.id("prependedInput2")).sendKeys(password, Keys.ENTER);
+
+        Thread.sleep(5000);
+
+        String expected = "Dashboard";
+        String actual = driver.getTitle();
+        Assert.assertEquals(actual, expected, "Page title is not correct!");
     }
 
     @AfterMethod
