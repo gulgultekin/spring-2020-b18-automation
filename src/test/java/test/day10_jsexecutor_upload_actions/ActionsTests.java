@@ -27,6 +27,22 @@ public class ActionsTests {
 
     }
 
-    
+    @Test
+    public void tc15_hover_test(){
+        Driver.getDriver().get("http://practice.cybertekschool.com/hovers");
+
+        //We need to locate images and texts
+
+        WebElement img1 = Driver.getDriver().findElement(By.xpath("//div[@class='figure'][1]"));
+        WebElement img2 = Driver.getDriver().findElement(By.xpath("//div[@class='figure'][2]"));
+        WebElement img3 = Driver.getDriver().findElement(By.xpath("//div[@class='figure'][3]"));
+
+
+        //We need to create instance of Actions
+        //Use the instance to do hovering
+
+    }
+
+
 
 }
