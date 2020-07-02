@@ -20,6 +20,8 @@ public class JavaScriptExecutorPractices {
         Thread.sleep(4000);
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", cybertekSchoolLink);
 
+
+
     }
 
 
