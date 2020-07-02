@@ -13,7 +13,6 @@ public class Uploading {
 
         Driver.getDriver().get("http://practice.cybertekschool.com/upload");
 
-
         WebElement chooseFile = Driver.getDriver().findElement(By.id("file-upload"));
 
         Thread.sleep(3000);
