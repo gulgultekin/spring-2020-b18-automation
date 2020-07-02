@@ -9,7 +9,7 @@ import utilities.Driver;
 public class ActionsTests {
 
     @Test
-    public void hover_over_test1(){
+    public void hover_over_test1() throws InterruptedException{
         Driver.getDriver().get("https://www.amazon.com");
 
         //1- Create the instance of Actions class
@@ -19,9 +19,14 @@ public class ActionsTests {
         //3- Locate the web element to hover over
         WebElement languageOptions = Driver.getDriver().findElement(By.id("icp-nav-flyout"));
 
-        //4- Using actions, hover over to the Language options
+        Thread.sleep(3000);
 
+        //4- Using actions, hover over to the Language options
+        actions.moveToElement(languageOptions).perform();
+        //actions.perform();
 
     }
+
+    
 
 }
