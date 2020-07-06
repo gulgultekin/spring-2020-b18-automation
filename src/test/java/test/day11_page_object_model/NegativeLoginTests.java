@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
+import pages.LoginPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
@@ -37,6 +38,23 @@ public class NegativeLoginTests {
     @Test
     public void negative_login_test_with_page_object(){
         Driver.getDriver().get(ConfigurationReader.getProperty("vytrack_url"));
+
+        LoginPage loginPage = new LoginPage();
+
+        //sending username
+        String username = ConfigurationReader.getProperty("storemanager_username");
+
+        loginPage.usernameInput.sendKeys(username);
+
+        //send our incorrect password
+        loginPage.passwordInput.sendKeys("jaksddfh");
+
+        //click using our loginpage object
+        loginPage.loginButton.click();
+
+        //asserting error message is displayed
+        Assert.assertTrue(loginPage.errorMessage.isDisplayed());
+
 
 
     }
