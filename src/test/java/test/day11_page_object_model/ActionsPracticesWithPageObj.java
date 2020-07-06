@@ -27,7 +27,8 @@ public class ActionsPracticesWithPageObj {
         Assert.assertTrue(hoversPage.user1.isDisplayed());
 
         //4. Hover over to second image
-        
+        //5. Assert:
+        //a. “name: user2” is displayed
         Thread.sleep(3000);
 
         actions.moveToElement(hoversPage.img2).perform();
@@ -35,15 +36,15 @@ public class ActionsPracticesWithPageObj {
         Assert.assertTrue(hoversPage.user2.isDisplayed());
 
 
-        //5. Assert:
-        //a. “name: user2” is displayed
-
         //6. Hover over to third image
-
         //7. Confirm:
         //a. “name: user3” is displayed
+        Thread.sleep(3000);
+        actions.moveToElement(hoversPage.img3).perform();
 
+        Assert.assertTrue(hoversPage.user3.isDisplayed());
 
+        
 
 
     }
