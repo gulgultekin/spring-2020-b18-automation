@@ -60,7 +60,7 @@ public class ActionsPractices {
     }
 
     @Test
-    public void tc17_drag_and_drop_test(){
+    public void tc17_drag_and_drop_test() throws InterruptedException{
 
         //1. Go to https://demos.telerik.com/kendo-ui/dragdrop/index
         Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
@@ -74,13 +74,25 @@ public class ActionsPractices {
         //using actions instance to do drag and drop
         actions = new Actions(Driver.getDriver());
 
-        actions.clickAndHold(smallCircle).moveToElement(bigCircle).release().perform();
+        actions.clickAndHold(smallCircle).moveToElement(bigCircle).perform();
+
+        String expectedWhileHover = "Now drop...";
+        String actualWhileHover = bigCircle.getText();
+
+        Assert.assertEquals(actualWhileHover, expectedWhileHover);
+
+        Thread.sleep(2000);
+
+        actions.release().perform();
+
+        //actions.dragAndDrop(smallCircle, bigCircle).perform();
 
         //3. Assert:
         //-Text in big circle changed to: “You did great!”
+        String actual = bigCircle.getText();
+        String expected = "You did great!";
 
-
-
+        Assert.assertEquals(actual, expected);
 
 
 
