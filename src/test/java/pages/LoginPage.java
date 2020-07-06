@@ -14,10 +14,17 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    //locating username input box
+
     @FindBy(id = "prependedInput")
     public WebElement usernameInput;
 
-    
+    //locating input password
+    @FindBy(id = "prependedInput2")
+    public WebElement passwordInput;
 
+    //locating login button
+    @FindBy(id = "_submit")
+    public WebElement loginButton;
 
 }
