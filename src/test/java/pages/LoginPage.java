@@ -27,6 +27,7 @@ public class LoginPage {
     @FindBy(id = "_submit")
     public WebElement loginButton;
 
+    //locating error message
     @FindBy(xpath = "//div[@class='alert alert-error']")
     public WebElement errorMessage;
 
