@@ -118,5 +118,5 @@ public class ActionsPractices {
 
         //No assertion needed for this practice.
     }
-    
+
 }
