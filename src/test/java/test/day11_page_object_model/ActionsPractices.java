@@ -13,7 +13,7 @@ public class ActionsPractices {
     Actions actions;
 
     @Test
-    public void scrolling_with_actions() throws InterruptedException{
+    public void scrolling_with_actions() throws InterruptedException {
         //get our page
         Driver.getDriver().get("http://practice.cybertekschool.com/");
 
@@ -34,7 +34,7 @@ public class ActionsPractices {
     }
 
     @Test
-    public void tc16_double_click_test(){
+    public void tc16_double_click_test() {
         //1. Go to https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2
         Driver.getDriver().get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2");
 
@@ -61,7 +61,7 @@ public class ActionsPractices {
     }
 
     @Test
-    public void tc17_drag_and_drop_test() throws InterruptedException{
+    public void tc17_drag_and_drop_test() throws InterruptedException {
 
         //1. Go to https://demos.telerik.com/kendo-ui/dragdrop/index
         Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
@@ -96,12 +96,10 @@ public class ActionsPractices {
         Assert.assertEquals(actual, expected);
 
 
-
-
     }
 
     @Test
-    public void tc18_right_click_test(){
+    public void tc18_right_click_test() {
         //1. Go to https://the-internet.herokuapp.com/context_menu
         Driver.getDriver().get("https://the-internet.herokuapp.com/context_menu");
 
@@ -120,11 +118,5 @@ public class ActionsPractices {
 
         //No assertion needed for this practice.
     }
-
-
-
-
-
-
-
+    
 }
