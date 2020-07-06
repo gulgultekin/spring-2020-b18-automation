@@ -3,12 +3,14 @@ package test.day11_page_object_model;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class NegativeLoginTests {
 
+    @Ignore
     @Test
     public void negative_login_test(){
 
@@ -30,7 +32,14 @@ public class NegativeLoginTests {
 
         Assert.assertTrue(errorMessage.isDisplayed(), "Assert message is NOT displayed");
 
+    }
+
+    @Test
+    public void negative_login_test_with_page_object(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("vytrack_url"));
+
 
     }
+
 
 }
