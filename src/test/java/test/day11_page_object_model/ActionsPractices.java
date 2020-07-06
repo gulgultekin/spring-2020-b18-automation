@@ -102,7 +102,16 @@ public class ActionsPractices {
     @Test
     public void tc18_right_click_test(){
         //1. Go to https://the-internet.herokuapp.com/context_menu
+        Driver.getDriver().get("https://the-internet.herokuapp.com/context_menu");
+
         //2. Right click to the box.
+        WebElement box = Driver.getDriver().findElement(By.id("hot-spot"));
+
+        actions = new Actions(Driver.getDriver());
+
+        actions.contextClick(box).perform();
+        
+
         //3. Alert will open.
         //4. Accept alert
         //No assertion needed for this practice.
