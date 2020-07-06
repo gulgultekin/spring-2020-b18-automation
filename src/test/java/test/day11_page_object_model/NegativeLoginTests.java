@@ -2,6 +2,7 @@ package test.day11_page_object_model;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -24,6 +25,10 @@ public class NegativeLoginTests {
         passwordInput.sendKeys("lkjzdhvalk");
 
         loginButton.click();
+
+        WebElement errorMessage = Driver.getDriver().findElement(By.xpath("//div[@class='alert alert-error']"));
+
+        Assert.assertTrue(errorMessage.isDisplayed(), "Assert message is NOT displayed");
 
 
     }
