@@ -18,10 +18,14 @@ public class ActionsPractices {
 
         //locating the web element we want to scroll to
         WebElement cybertekSchoolLink = Driver.getDriver().findElement(By.linkText("Cybertek School"));
+        WebElement inputs = Driver.getDriver().findElement(By.linkText("Inputs"));
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //using actions instance we use moveToElement method
         actions.moveToElement(cybertekSchoolLink).perform();
+
+        Thread.sleep(3000);
+        actions.moveToElement(inputs).click().perform();
 
     }
 }
