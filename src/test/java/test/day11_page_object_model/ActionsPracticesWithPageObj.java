@@ -44,7 +44,7 @@ public class ActionsPracticesWithPageObj {
 
         Assert.assertTrue(hoversPage.user3.isDisplayed());
 
-        
+
 
 
     }
