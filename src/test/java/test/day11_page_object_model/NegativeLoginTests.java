@@ -52,8 +52,15 @@ public class NegativeLoginTests {
         //click using our loginpage object
         loginPage.loginButton.click();
 
-        //asserting error message is displayed
+        //asserting error message IS DISPLAYED
         Assert.assertTrue(loginPage.errorMessage.isDisplayed());
+
+        //asserting the TEXT VALUE of the error message
+        String actualText = loginPage.errorMessage.getText();
+        String expectedText = "Invalid user name or password.";
+
+        Assert.assertEquals(actualText, expectedText);
+
 
 
 
