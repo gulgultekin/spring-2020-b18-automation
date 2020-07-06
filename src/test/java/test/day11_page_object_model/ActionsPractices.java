@@ -32,7 +32,6 @@ public class ActionsPractices {
 
     }
 
-
     @Test
     public void tc16_double_click_test(){
         //1. Go to https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2
@@ -62,7 +61,30 @@ public class ActionsPractices {
 
     @Test
     public void tc17_drag_and_drop_test(){
-        
+
+        //1. Go to https://demos.telerik.com/kendo-ui/dragdrop/index
+        Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+
+        //2. Drag and drop the small circle to bigger circle.
+
+        WebElement smallCircle = Driver.getDriver().findElement(By.id("draggable"));
+
+        WebElement bigCircle = Driver.getDriver().findElement(By.id("droptarget"));
+
+        //using actions instance to do drag and drop
+        actions = new Actions(Driver.getDriver());
+
+        actions.clickAndHold(smallCircle).moveToElement(bigCircle).release().perform();
+
+        //3. Assert:
+        //-Text in big circle changed to: “You did great!”
+
+
+
+
+
+
+
     }
 
 
