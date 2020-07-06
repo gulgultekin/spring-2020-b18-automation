@@ -29,7 +29,7 @@ public class ActionsTests {
     }
 
     @Test
-    public void tc15_hover_test() throws InterruptedException{
+    public void tc15_hover_test() throws InterruptedException {
         Driver.getDriver().get("http://practice.cybertekschool.com/hovers");
 
         //We need to locate images and texts
