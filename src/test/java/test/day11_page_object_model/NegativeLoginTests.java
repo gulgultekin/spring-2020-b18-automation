@@ -67,6 +67,10 @@ public class NegativeLoginTests {
     @Test
     public void tc31_wrong_username_test(){
 
+        Driver.getDriver().get(ConfigurationReader.getProperty("vytrack_url"));
+
+
+
     }
 
 
