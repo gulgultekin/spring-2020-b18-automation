@@ -58,9 +58,11 @@ public class ActionsPractices {
         Assert.assertTrue(actual.equals(expected));
 
 
+    }
 
-
-
+    @Test
+    public void tc17_drag_and_drop_test(){
+        
     }
 
 
