@@ -99,5 +99,19 @@ public class ActionsPractices {
 
     }
 
+    @Test
+    public void tc18_right_click_test(){
+        //1. Go to https://the-internet.herokuapp.com/context_menu
+        //2. Right click to the box.
+        //3. Alert will open.
+        //4. Accept alert
+        //No assertion needed for this practice.
+    }
+
+
+
+
+
+
 
 }
