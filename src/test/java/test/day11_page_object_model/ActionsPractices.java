@@ -1,5 +1,6 @@
 package test.day11_page_object_model;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -110,10 +111,13 @@ public class ActionsPractices {
         actions = new Actions(Driver.getDriver());
 
         actions.contextClick(box).perform();
-        
 
         //3. Alert will open.
+        Alert alert = Driver.getDriver().switchTo().alert();
+
         //4. Accept alert
+        alert.accept();
+
         //No assertion needed for this practice.
     }
 
