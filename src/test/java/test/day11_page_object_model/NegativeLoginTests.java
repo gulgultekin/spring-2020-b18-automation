@@ -62,7 +62,10 @@ public class NegativeLoginTests {
         Assert.assertEquals(actualText, expectedText);
 
 
+    }
 
+    @Test
+    public void tc31_wrong_username_test(){
 
     }
 
