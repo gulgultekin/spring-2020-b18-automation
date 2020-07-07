@@ -60,7 +60,7 @@ public class ForgotPasswordTests {
     public void tc36_error_message_verification(){
 
         Driver.getDriver().get(ConfigurationReader.getProperty("forgotpassword_url"));
-        
+
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
 
         String randomString = "asdfaa";
