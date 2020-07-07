@@ -13,10 +13,10 @@ public class Loading7Page {
     }
 
 
-    @FindBy()
+    @FindBy(xpath = "//strong")
     public WebElement doneMessage;
 
-    @FindBy()
+    @FindBy(xpath = "//img[@class='rounded mx-auto d-block']")
     public WebElement spongeBobImage;
 
 }
