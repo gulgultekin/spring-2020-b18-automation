@@ -14,7 +14,14 @@ public class Loading1Page {
     @FindBy(xpath = "//button[.='Start']")
     public WebElement startButton;
 
+    @FindBy(id = "username")
+    public WebElement usernameInput;
 
+    @FindBy(id = "pwd")
+    public WebElement passwordInput;
+
+    @FindBy(xpath = "//button[.='Submit']")
+    public WebElement submitButton;
 
 
 }
