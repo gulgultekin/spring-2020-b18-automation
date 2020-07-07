@@ -1,5 +1,6 @@
 package test.day12_synchronization;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utilities.ConfigurationReader;
@@ -25,9 +26,17 @@ public class ForgotPasswordTests {
 
         loginPage.forgotPasswordLink.click();
 
+        //Verifying the title is as expected
+        String expectedTitle = "Forgot Password";
+        String actualTitle = Driver.getDriver().getTitle();
 
+        Assert.assertEquals(actualTitle, expectedTitle);
 
+        //Verifying the URL is as expected
+        String expectedUrl = "https://qa2.vytrack.com/user/reset-request";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
 
+        Assert.assertEquals(actualUrl, expectedUrl);
 
 
     }
