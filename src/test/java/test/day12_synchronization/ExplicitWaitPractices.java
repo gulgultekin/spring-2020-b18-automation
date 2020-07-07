@@ -27,6 +27,7 @@ public class ExplicitWaitPractices {
         //creating the instance of WebDriverWait to use its methods
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         String expectedTitleToBe = "Dynamic title";
+
         //we are using the object to set up our EXPECTED CONDITION
         wait.until(ExpectedConditions.titleIs(expectedTitleToBe));
 
@@ -39,6 +40,12 @@ public class ExplicitWaitPractices {
 
 
 
+
+    }
+
+
+    @Test
+    public void tc41_dynamic_form_test(){
 
     }
 
