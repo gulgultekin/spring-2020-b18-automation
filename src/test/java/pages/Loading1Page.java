@@ -23,5 +23,13 @@ public class Loading1Page {
     @FindBy(xpath = "//button[.='Submit']")
     public WebElement submitButton;
 
+    @FindBy(id = "loading")
+    public WebElement loadingBar;
+
+    @FindBy(id = "flash")
+    public WebElement errorMessage;
+
+
+
 
 }

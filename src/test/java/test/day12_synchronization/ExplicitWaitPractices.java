@@ -49,20 +49,36 @@ public class ExplicitWaitPractices {
     1.Go to http://practice.cybertekschool.com/dynamic_loading/1
     2.Click to start
     3.Wait until loading bar disappears
-    4.Assert username inputbox is displayed
+    4.Assert username input box is displayed
     5.Enter username: tomsmith
     6.Enter password: incorrectpassword
     7.Click to Submit button
     8.Assert "Your username is invalid!" text is displayed.
      */
     @Test
-    public void tc41_dynamic_form_test(){
+    public void tc41_dynamic_form_test() throws InterruptedException{
         Driver.getDriver().get("http://practice.cybertekschool.com/dynamic_loading/1");
 
         Loading1Page loading1Page = new Loading1Page();
 
         loading1Page.startButton.click();
+        //Thread.sleep(10000);
 
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+
+        wait.until(ExpectedConditions.invisibilityOf(loading1Page.loadingBar));
+
+        Assert.assertTrue(loading1Page.usernameInput.isDisplayed(), "Username input box is not displayed!");
+
+        loading1Page.usernameInput.sendKeys("asdfasdf");
+
+        loading1Page.passwordInput.sendKeys("SuperSecretPassword");
+
+        loading1Page.submitButton.click();
+
+        Assert.assertTrue(loading1Page.errorMessage.isDisplayed());
+
+        //break until 4.10pm est
 
 
     }
