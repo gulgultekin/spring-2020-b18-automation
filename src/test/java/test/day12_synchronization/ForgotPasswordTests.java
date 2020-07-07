@@ -42,4 +42,29 @@ public class ForgotPasswordTests {
     }
 
 
+    /*
+    TC#36 : Vytrack forgot password page verification->ERROR MESSAGE
+        1. Go to https://qa3.vytrack.com/user/reset-request
+        2. Enter random username
+        3. Click to request button
+        4. Verify error message is displayed
+        5. Verify error message text is as expected.
+        Expected: There is no active user with username or email address “given text”.
+        Note: Follow Page Object Model design pattern
+     */
+
+
+    @Test
+    public void tc36_error_message_verification(){
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("forgotpassword_url"));
+
+
+
+
+
+    }
+
+
+
 }
