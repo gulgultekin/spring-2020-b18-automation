@@ -2,6 +2,7 @@ package test.day12_synchronization;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.ForgotPasswordPage;
 import pages.LoginPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -53,13 +54,25 @@ public class ForgotPasswordTests {
         Note: Follow Page Object Model design pattern
      */
 
-
     @Test
     public void tc36_error_message_verification(){
 
         Driver.getDriver().get(ConfigurationReader.getProperty("forgotpassword_url"));
 
+        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
 
+        String randomString = "asdfaa";
+
+        //sending a random string into input box
+        forgotPasswordPage.inputBox.sendKeys(randomString);
+
+        //clicking to request button
+        forgotPasswordPage.requestButton.click();
+
+        //verify error message is displayed
+        Assert.assertTrue(forgotPasswordPage.errorMessage.isDisplayed());
+
+        //
 
 
 

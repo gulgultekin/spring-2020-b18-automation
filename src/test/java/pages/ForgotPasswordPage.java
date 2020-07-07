@@ -23,6 +23,6 @@ public class ForgotPasswordPage {
     @FindBy(xpath = "//div[@class='alert alert-error']")
     public WebElement errorMessage;
 
-    
+
 
 }
