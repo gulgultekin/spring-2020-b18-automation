@@ -72,8 +72,11 @@ public class ForgotPasswordTests {
         //verify error message is displayed
         Assert.assertTrue(forgotPasswordPage.errorMessage.isDisplayed());
 
-        //
+        //verify error message text value is expected and contains random string
+        String expectedMessage = "There is no active user with username or email address \""+randomString+"\".";
+        String actualMessage = forgotPasswordPage.errorMessage.getText();
 
+        Assert.assertEquals(actualMessage, expectedMessage);
 
 
     }
